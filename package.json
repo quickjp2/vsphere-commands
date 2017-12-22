@@ -1,7 +1,7 @@
 {
   "name": "hubot-vsphere-commands",
   "description": "A hubot script that allows users to interact with the vsphere-rest-api developed by quickjp2 on github.",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "author": " <john.paul.quicksall@gmail.com>",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts, vmware",
