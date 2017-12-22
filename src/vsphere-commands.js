@@ -171,7 +171,7 @@
   module.exports = function(robot) {
     robot.respond(/list [me\s]*all vms/i, function(msg) {
       var url = data.url + "vms/"
-      robot.logger.debgu("Data is " + data)
+      robot.logger.debug("Data is " + data)
       robot.logger.debug("URL is " + url)
       return robot.http(url).get()(function(err, res, body) {
         var all_vms, i, j, len, vm, vms;
