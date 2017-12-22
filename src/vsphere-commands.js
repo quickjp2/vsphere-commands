@@ -33,6 +33,7 @@
       } else {
         data = {};
         data = JSON.parse(contents.toString());
+        console.log("Upload successful; data is now..." + data)
         return data;
       }
     });
@@ -169,10 +170,13 @@
 
   module.exports = function(robot) {
     robot.respond(/list [me\s]*all vms/i, function(msg) {
-      return robot.http(data.url + "vms/").get()(function(err, res, body) {
+      var url = data.url + "vms/"
+      robot.logger.debgu("Data is " + data)
+      robot.logger.debug("URL is " + url)
+      return robot.http(url).get()(function(err, res, body) {
         var all_vms, i, j, len, vm, vms;
         if (err) {
-          robot.logger.info("Encountered an error: " + err);
+          robot.logger.info("API call encountered an error: " + err);
         } else {
           msg.send("We got vms..and there's a lot...let me filter this for you...please wait");
           vms = JSON.parse(body).vm;
